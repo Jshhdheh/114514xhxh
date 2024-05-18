@@ -70,13 +70,24 @@ local function HeartbeatUpdate()
 end
 Start = tick()
 Heartbeat:Connect(HeartbeatUpdate)
-local ScreenGui = Instance.new("ScreenGui")
-local UI = Instance.new("Frame")
-local Title = Instance.new("TextLabel")
-local Frame = Instance.new("Frame")
-local Key = Instance.new("TextBox")
-local Start = Instance.new("TextButton")
 local Window = OrionLib:MakeWindow({Name = "fuhfhjgcgjb中心", HidePremium = false, SaveConfig =true,IntroText="欢迎使用fuhfhjgcgjb中心", ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "主页",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("提示","脚本中心") 
+Tab:AddParagraph("你的注入器:"..identifyexecutor())
+Tab:AddParagraph("作者","ghgj")
+
+Tab:AddButton ({
+	Name = "复制作者QQ",
+	Callback = function ()
+	 setclipboard("3762912107")
+	end
+})
 
 local Tab = Window:MakeTab({
 	Name = "doors",
